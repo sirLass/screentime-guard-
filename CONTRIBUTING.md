@@ -13,8 +13,8 @@ Thanks for your interest in contributing! This project aims to be a transparent,
 Prerequisites: Node.js >= 22, [pnpm](https://pnpm.io) 11 (or `corepack enable`).
 
 ```bash
-git clone https://github.com/CHANGE-ME/screentime-guard.git
-cd screentime-guard
+git clone https://github.com/sirLass/screentime-guard-.git
+cd screentime-guard-
 pnpm install
 pnpm dev        # extension dev server with hot reload
 ```
@@ -22,6 +22,16 @@ pnpm dev        # extension dev server with hot reload
 Load the unpacked build in Chrome: `chrome://extensions` → Developer mode → **Load unpacked** → `apps/extension/.output/chrome-mv3`.
 
 Use a **separate Chrome profile** for development so your own browsing is not tracked while testing.
+
+## Supply-chain policy
+
+This repo enforces pnpm's `minimumReleaseAge: 1440` (see `pnpm-workspace.yaml`): package versions published to npm less than **24 hours ago** are rejected at install time. This is a supply-chain defense (PRD §6.3), and CI re-verifies the committed lockfile against the same policy — so a lockfile resolved here always passes CI.
+
+Two quirks worth knowing:
+
+- pnpm **verifies** the release-age policy but does **not** filter versions during resolution. If you install a dependency whose latest release is under 24 hours old, the install fails with `ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION` and **no lockfile is written**. Fix: install/pin an older version, or wait a day and retry.
+- pnpm can reconstruct a resolution from an existing `node_modules` tree even when `pnpm-lock.yaml` is deleted. If an install keeps resolving a policy-violating version despite an older pin in `package.json`, delete `node_modules` and install again.
+- `@types/chrome` is deliberately pinned to the exact version `0.3.5` because newer releases landed inside the cutoff window. Dependabot will propose bumps once versions age past 24 hours.
 
 ## Project structure
 

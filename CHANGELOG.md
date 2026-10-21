@@ -15,4 +15,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions CI (lint, type-check, unit tests, build), Dependabot, issue and PR templates
 - AGPL-3.0 license, README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY
 
-[Unreleased]: https://github.com/CHANGE-ME/screentime-guard/compare/HEAD...HEAD
+[Unreleased]: https://github.com/sirLass/screentime-guard-/compare/HEAD...HEAD

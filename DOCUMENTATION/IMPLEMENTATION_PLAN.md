@@ -37,7 +37,7 @@ Companion to `PRD.md`. This document turns the PRD into an ordered, checkable bu
 - [ ] 🟢 Decide how to handle **shared family computers** (document the recommended approach: one Chrome profile per child)
 
 ## 0.2 Repository setup
-- [ ] 🔴 Create the GitHub repo (public) with `LICENSE`, `README.md` (stub), `.gitignore` — local git repo done; push to GitHub pending
+- [x] 🔴 Create the GitHub repo (public) with `LICENSE`, `README.md` (stub), `.gitignore` — done: https://github.com/sirLass/screentime-guard-
 - [x] 🔴 Set up a **monorepo** (pnpm workspaces) with the structure from PRD 7.7:
   - [x] `apps/extension`
   - [x] `packages/shared`

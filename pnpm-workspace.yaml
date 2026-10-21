@@ -1,3 +1,9 @@
 packages:
   - apps/*
   - packages/*
+
+# Supply-chain policy (pnpm >= 10.16): refuse to install package versions
+# published less than 24 hours ago. Keeps local installs and CI in agreement —
+# CI enforces this against the lockfile, so a lockfile resolved here always passes.
+# See PRD §6.3 and CONTRIBUTING.md ("Supply-chain policy").
+minimumReleaseAge: 1440
