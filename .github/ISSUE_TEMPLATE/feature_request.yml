@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest an idea or improvement
+title: '[Feature]: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening a feature request, please check the [PRD](../../blob/main/DOCUMENTATION/PRD.md) —
+        some ideas are already planned, and some are explicit **non-goals** (e.g., content capture, location tracking).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What are you trying to do that the extension can't do today?
+      placeholder: As a parent, I want... so that...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you thought about?
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      description: This project stores only domain names and durations.
+      options:
+        - label: My request does not require collecting page content, keystrokes, URLs beyond the domain, or any other data beyond what the PRD allows.
+          required: true
